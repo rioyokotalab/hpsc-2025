@@ -6,6 +6,7 @@ int main() {
   int n = 50;
   int range = 5;
   std::vector<int> key(n);
+
   for (int i=0; i<n; i++) {
     key[i] = rand() % range;
     printf("%d ",key[i]);
@@ -15,15 +16,17 @@ int main() {
   std::vector<int> bucket(range,0); 
   for (int i=0; i<n; i++)
     bucket[key[i]]++;
+  
   std::vector<int> offset(range,0);
   for (int i=1; i<range; i++) 
     offset[i] = offset[i-1] + bucket[i-1];
 
-//homework 3
-#pragma omp parallel for
+  //homework3
+  #pragma omp parallel for
   for (int i=0; i<range; i++) {
-    int j = offset[i];
-    for (; bucket[i]>0; bucket[i]--) {
+    int start = offset[i];
+    int count = bucket[i];
+    for (int j = 0; j < count; j++) {
       key[j++] = i;
     }
   }
