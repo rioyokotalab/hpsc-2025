@@ -5,6 +5,7 @@ int main() {
   double dx = 1. / n;
   double pi = 0;
 
+//homework 1
 #pragma omp parallel for reduction(+:pi)
   for (int i=0; i<n; i++) {
     double x = (i + 0.5) * dx;
