@@ -20,6 +20,7 @@ int main() {
     offset[i] = offset[i-1] + bucket[i-1];
 
 //homework 3
+#pragma omp parallel for
   for (int i=0; i<range; i++) {
     int j = offset[i];
     for (; bucket[i]>0; bucket[i]--) {
