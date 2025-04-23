@@ -55,3 +55,4 @@ int main(int argc, char** argv) {
   MPI_Win_free(&win);
   MPI_Finalize();
 }
+
