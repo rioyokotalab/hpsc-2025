@@ -11,13 +11,13 @@
 05_sin: 05_sin.cpp
 	g++ 05_sin.cpp -fopt-info-vec-optimized -march=native -O3
 06_intrinsic_vecadd: 06_intrinsic_vecadd.cpp
-	g++ 06_intrinsic_vecadd.cpp -march=native -O3
+	g++ 06_intrinsic_vecadd.cpp -mavx512f -O3
 07_intrinsic_reduction: 07_intrinsic_reduction.cpp
-	g++ 07_intrinsic_reduction.cpp -march=native -O3
+	g++ 07_intrinsic_reduction.cpp -mavx512f -O3
 08_intrinsic_if: 08_intrinsic_if.cpp
-	g++ 08_intrinsic_if.cpp -march=native -O3
+	g++ 08_intrinsic_if.cpp -mavx512f -O3
 09_intrinsic_permute: 09_intrinsic_permute.cpp
-	g++ 09_intrinsic_permute.cpp -march=native -O3
+	g++ 09_intrinsic_permute.cpp -mavx512f -O3
 10_intrinsic_sin: 10_intrinsic_sin.cpp
 	icc 10_intrinsic_sin.cpp -xHost
 11_nbody: 11_nbody.cpp
